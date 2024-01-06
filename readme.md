@@ -55,5 +55,31 @@ Initialize the database and run migrations:
 ### Scripts
     venv/: Virtual environment directory.
 
+## Screenshots
+
+![Screenshot of Welcome Page](https://github.com/wende61/swift_transfer/blob/main/static/images/welcome.png)
+
+![Screenshot of Users](https://github.com/wende61/swift_transfer/blob/main/static/images/users.png)
+
+![Screenshot of Users](https://github.com/wende61/swift_transfer/blob/main/static/images/users.png)
+
+![Screenshot of Users Update](https://github.com/wende61/swift_transfer/blob/main/static/images/update_users.png)
+
+![Screenshot of customers](https://github.com/wende61/swift_transfer/blob/main/static/images/customers.png)
+
+![Screenshot of Add Customer](https://github.com/wende61/swift_transfer/blob/main/static/images/add_customer.png)
+
+![Screenshot of Update Customer](https://github.com/wende61/swift_transfer/blob/main/static/images/update_customer.png)
+
+![Screenshot of Remove Customer](https://github.com/wende61/swift_transfer/blob/main/static/images/delete_customer.png)
+
+![Screenshot of Transfer Approval](https://github.com/wende61/swift_transfer/blob/main/static/images/Transfer_approval.png)
+
+![Screenshot of Admin Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/admin_transfer.png)
+
+![Screenshot of Customer initiate Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/initiate_transfer_request.png)
+
+![Screenshot of Customer Update Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/edit_my_transfert.png)
 
 
+![Screenshot of Password Change](https://github.com/wende61/swift_transfer/blob/main/static/images/change_password.png)
