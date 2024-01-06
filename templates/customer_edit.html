@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+<style>
+    input[name='username'] {
+        display: none;
+    }
+ </style>
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Customer Edit</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="box" id="message">
+                    <div class="notification is-{{ category }}">
+                       {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+     {% endwith %}
+<form method="POST" action="{{ url_for('customer.update_customer', customer_id=customer.id) }}">
+    {{ form.hidden_tag() }}
+    {{ form.first_name.label(class="form-label") }}
+    <div class="field">
+      <div class="control">
+          {{ form.first_name(class="input is-large",style={'width': '50%'}, type="text", placeholder="Customer Username", autofocus="") }}
+      </div>
+      </div>
+      {{ form.last_name.label(class="form-label") }}
+      <div class="field">
+        <div class="control">
+            {{ form.last_name(class="input is-large",style={'width': '50%'}, type="text", placeholder="Customer Username", autofocus="") }}
+        </div>
+        </div>
+  
+    
+    {{ form.customer_email.label(class="form-label") }}
+    <div class="field">
+      <div class="control">
+          {{ form.customer_email(class="input is-large", type="email", placeholder="Customer Email", autofocus="") }}
+      </div>
+      </div>
+    
+    {{ form.address.label(class="form-label") }}
+    <div class="field">
+      <div class="control">
+          {{ form.address(class="input is-large", type="text", placeholder="C Password", autofocus="") }}
+      </div>
+      </div>
+
+    {{ form.submit(class="button is-block is-info is-large is-fullwidth") }}
+  </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Customer on Board</h3>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="box" id="message">
+                <div class="notification is-{{ category }}">
+                   {{ message }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+ {% endwith %}
+  </div>
+<div class="column is-8 is-offset-2">
+    
+    <div class="box">
+        
+
+<form method="POST" action="{{ url_for('customer.create_customer') }}">
+    {{ form.hidden_tag() }}
+    {{ form.first_name.label(class="form-label") }}
+    <div class="field">
+      <div class="control">
+          {{ form.first_name(class="input is-large",style={'width': '50%'}, type="text", placeholder="Customer First Name", autofocus="") }}
+      </div>
+      </div>
+      {{ form.last_name.label(class="form-label") }}
+      <div class="field">
+        <div class="control">
+            {{ form.last_name(class="input is-large",style={'width': '50%'}, type="text", placeholder="Customer Last Name", autofocus="") }}
+        </div>
+        </div>
+    {{ form.customer_email.label(class="form-label") }}
+    <div class="field">
+      <div class="control">
+          {{ form.customer_email(class="input is-large", type="email", placeholder="Customer Email", autofocus="") }}
+      </div>
+      </div>    
+      
+      {{ form.address.label(class="form-label") }}
+      <div class="field">
+        <div class="control">
+            {{ form.address(class="input is-large", type="text", placeholder="Customer Address", autofocus="") }}
+        </div>
+        </div>  
+    {{ form.submit(class="button is-block is-info is-large is-fullwidth") }}
+  </form>
+    </div>
+</div>
+
+{% endblock %}

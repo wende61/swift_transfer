@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">SWIFT Transfer</h3>
+    <div class="box">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+              <div class="box" id="message">
+                  <div class="notification is-{{ category }}">
+                     {{ message }}
+                  </div>
+              </div>
+          {% endfor %}
+      {% endif %}
+   {% endwith %}
+
+<form method="POST" action="{{ url_for('transfer.swift_transfer') }}">
+    {{ form.hidden_tag() }}
+    {{ form.recipient_email.label(class="form-label") }}
+    <div class="field">
+      <div class="control">
+        <select class="form-control" id="recipient_email" name="recipient_email" required>
+          {% for customer in customers %}
+            {% if customer.customer_email != current_user.email %}
+              <option value="{{ customer.customer_email }}">{{ customer.first_name }} {{ customer.last_name }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+      </div>
+      {{ form.amount.label(class="form-label") }}
+      <div class="field">
+        <div class="control">
+          <input type="number" class="form-control" id="amount" name="amount" min="1" required>
+        </div>
+        </div>
+        {{ form.submit(class="button is-block is-info is-large is-fullwidth") }}
+  </form>
+    </div>
+</div>
+{% endblock %}

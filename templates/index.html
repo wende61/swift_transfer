@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+  <h1 class="title">
+    SWIFT transfer
+  </h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+      {% for category, message in messages %}
+          <div class="box" id="message">
+              <div class="notification is-{{ category }}">
+                 {{ message }}
+              </div>
+          </div>
+      {% endfor %}
+  {% endif %}
+{% endwith %}
+</div>
+<h2 class="subtitle">
+  Easy SWIFT transfer in Flask.
+</h2>
+{% endblock %}
