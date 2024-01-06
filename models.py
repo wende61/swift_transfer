@@ -84,7 +84,7 @@ class SwiftTransferForm(FlaskForm):
 class SwiftTransferEditForm(FlaskForm):
     amount = StringField('Amount', validators=[DataRequired()], render_kw={'readonly': True})
     customer_email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'readonly': True})
-    status = SelectField('Status', choices=[('Canceled', 'Cancel'), ('Reversed', 'Reverse'),('Approved', 'Approve')], validators=[DataRequired()])
+    status = SelectField('Status', choices=[('Canceled', 'Cancel'), ('Reversed', 'Reverse'),('Approved', 'Approve'),('Rejected', 'Reject')], validators=[DataRequired()])
     submit = SubmitField('Send')
    
 class UserForm(FlaskForm):

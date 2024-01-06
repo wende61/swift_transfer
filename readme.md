@@ -52,7 +52,7 @@ Initialize the database and run migrations:
     static/: Static assets (CSS, JS, images).
     migrations/: Database migration scripts.
 
-$# Scripts
+### Scripts
     venv/: Virtual environment directory.
 
 

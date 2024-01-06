@@ -1,26 +1,5 @@
 {% extends "base.html" %}
 
-{% block title %}Edit SWIFT Transfer{% endblock %}
-
-{% block content %}
- <div class="container">
-
- <form method="POST">
- <div class="form-group">
-  <label for="status">Status</label>
-  <select class="form-control" id="status" name="status" required>
-    <option value="Approved" {% if swift_request.status == 'Approved' %}selected{% endif %}>Approved</option>
-    <option value="Denied" {% if swift_request.status == 'Denied' %}selected{% endif %}>Denied</option>
-  </select>
- </div>
- <button type="submit" class="btn btn-primary">Update</button>
- </form>
- </div>
-{% endblock %}
-
-
-{% extends "base.html" %}
-
 {% block content %}
 <div class="column is-4 is-offset-4">
   <h2>Edit SWIFT Transfer</h2>
@@ -38,32 +17,25 @@
    {% endwith %}
 <form method="POST" action="{{ url_for('transfer.edit_swift_transfer', id=swift_request.id) }}">
     {{ form.hidden_tag() }}
-    {{ form.username.label(class="form-label") }}
+    {{ form.customer_email.label(class="form-label") }}
     <div class="field">
       <div class="control">
-          {{ form.username(class="input is-large",style={'width': '50%'}, type="text", placeholder="Your Username", autofocus="") }}
+          {{ form.customer_email(class="input is-large",style={'width': '50%'}, type="email") }}
       </div>
       </div>
 
     
-    {{ form.email.label(class="form-label") }}
+    {{ form.amount.label(class="form-label") }}
     <div class="field">
       <div class="control">
-          {{ form.email(class="input is-large", type="email", placeholder="Your Email", autofocus="") }}
+          {{ form.amount(class="input is-large") }}
       </div>
       </div>
     
-    {{ form.password.label(class="form-label") }}
+    {{ form.status.label(class="form-label") }}
     <div class="field">
       <div class="control">
-          {{ form.password(class="input is-large", placeholder="Your Password", autofocus="") }}
-      </div>
-      </div>
-    
-    {{ form.role.label(class="form-label") }}
-    <div class="field">
-      <div class="control">
-          {{ form.role(class="input is-large") }}
+          {{ form.status(class="input is-large") }}
       </div>
       </div>
 

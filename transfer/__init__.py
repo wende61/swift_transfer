@@ -80,7 +80,7 @@ def customer_edit_swift_transfer(id):
  form = SwiftTransferEditForm(obj=swift_request)
  if request.method == 'POST':
    new_status = form.status.data
-   if new_status == 'Approved' and not current_user.role == 'admin':
+   if new_status == 'Approved' or new_status == 'Rejected'  and not current_user.role == 'admin':
        flash('Only administrators can approve transfers.', 'danger')
        return render_template('customer_edit_swift_transfer.html', swift_request=swift_request,form=form)
    swift_request.status = new_status
