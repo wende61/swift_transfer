@@ -75,11 +75,11 @@ Initialize the database and run migrations:
 
 ![Screenshot of Transfer Approval](https://github.com/wende61/swift_transfer/blob/main/static/images/Transfer_approval.png)
 
-![Screenshot of Admin Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/admin_transfer.png)
+![Screenshot of Admin Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/admin_transfer_list.png)
 
 ![Screenshot of Customer initiate Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/initiate_transfer_request.png)
 
-![Screenshot of Customer Update Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/edit_my_transfert.png)
+![Screenshot of Customer Update Transfers](https://github.com/wende61/swift_transfer/blob/main/static/images/edit_my_transfer.png)
 
 
 ![Screenshot of Password Change](https://github.com/wende61/swift_transfer/blob/main/static/images/change_password.png)
